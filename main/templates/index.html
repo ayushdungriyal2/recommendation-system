@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Book Recommendation System!</title>
+    <style>
+
+    a, h1, h2, h3, h4, h5, h6 {
+        color: #3A3B3C;
+        text-decoration: none !important;
+        ;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/" style="all:none; ">
+            <h1 style="font-weight: 600; margin: 40px 0 40px 0 ;">Book Recommendation System! </h1>
+        </a>
+        <form method="post" action="">
+            {% csrf_token %}
+            <input name="name" type="text" placeholder="search for your favourite book here "
+                style="width:20rem; margin: 0 0 40px 0">
+
+        </form>
+        {% if x %}
+        <hr>
+        <h3 style="font-weight: 600; margin: 40px 0 10px 0 ;">Your Recommended Books!</h3>
+        <div>
+            <div style='width:100%; ' class="row">
+                {% for r_book_name,r_author,r_image in r_custom_array%}
+                <div class="card mb-3"
+                    style=" width:20rem; margin: 10px 10px 10px 10px; height: 7.4rem; overflow: hidden;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{{r_image}}" class="card-img-top" style="width:5rem" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-size:14px; font-weight:700;">{{r_book_name}}</h5>
+                                <p class="card-text" style="font-size:10px;">Author - {{r_author}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+<hr>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- popular books  -->
+        <!-- popular books  -->
+        <!-- popular books  -->
+        <!-- popular books  -->
+        <!-- popular books  -->
+        <h5 style="font-weight: 600; margin: 40px 0 10px 0 ;">POPULAR BOOKS !</h5>
+        <div>
+            <div class="row">
+                {% for book_name, author, image in custom_array %}
+                <div class="card mb-3"
+                    style=" width:20rem; margin: 10px 10px 10px 10px; height: 7.4rem; overflow: hidden;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{{image}}" class="card-img-top" style="width:5rem" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-size:14px; font-weight:700;">{{book_name}}</h5>
+                                <p class="card-text" style="font-size:10px;">Author - {{author}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- end popular books  -->
+        <!-- end popular books  -->
+        <!-- end popular books  -->
+        <!-- end popular books  -->
+
+
+
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
